@@ -19,12 +19,12 @@ public class HelloTest {
 		ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 		Hello hello = (Hello)context.getBean("hello");
 		hello.sayHello("yexj");
-		// ²âÊÔÊ¹ÓÃÀàÃûÀ´´ÓÈİÆ÷ÖĞ»ñÈ¡
+		// è·å–æŒ‡å®šçš„ç±» 
 		Hello h = (Hello)context.getBean(Hello.class);
 		h.sayHello("ye");
 	}
 	
-	// ¼ÓÔØ×ÊÔ´µÄ·½Ê½
+	// æµ‹è¯•å…¶ä»–åŠ è½½èµ„æºçš„æ–¹å¼
 	@Test
 	public void test2(){
 		File file = new File("src/main/resources/application.xml");
