@@ -31,7 +31,7 @@ public class HelloTest {
 		Resource resource = new FileSystemResource(file);
 		BeanFactory factory = new XmlBeanFactory(resource);
 		Hello hello = (Hello)factory.getBean("hello");
-		hello.sayHello("СҶ");
+		hello.sayHello("你好");
 	}
 	
 	

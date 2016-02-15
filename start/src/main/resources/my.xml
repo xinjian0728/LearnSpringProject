@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans	      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context		   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- 指定了id和name，id就是标识符，而name就是别名，必须在IOC容器中唯一  -->
+	<!-- id和name一样，IOC容器能检测到，并消除冲突 -->
+	<bean id="first" name="firstName;secondName;thirdName" class="com.yexj.learn.spring.start.impl.FirstImpl" />
+</beans>

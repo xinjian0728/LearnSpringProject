@@ -7,5 +7,25 @@ http://www.springframework.org/schema/context		   http://www.springframework.org
 	
 	
 	<!-- id 表示你这个组件的名字，class表示组件类 -->
-	<bean id="hello" class="com.yexj.learn.spring.start.impl.HelloImpl"></bean>
+	<bean id="hello" class="com.yexj.learn.spring.start.impl.HelloImpl"/>
+	<!-- 引入其他资源 -->
+	<import resource="my.xml"/>
+	
+	<!-- 实例化Bean 无参数和有参数的两种 -->
+	<bean name="helloApi" class="com.yexj.learn.spring.second.impl.HelloApiImpl"/>
+	
+	<bean name="helloApi2" class="com.yexj.learn.spring.second.impl.HelloApiImpl">
+		<constructor-arg index="0" value="Hello Spring!"/>
+	</bean>
+	
+	<!-- 使用静态工厂的方式实例化Bean -->
+	<bean name="helloFactory" class="com.yexj.learn.spring.second.HelloApiStaticFactory" factory-method="newInstance">
+		<constructor-arg index="0" value="Hello Great Spring!"></constructor-arg>
+	</bean>
+	<!-- 使用实例工厂方法实例化Bean -->
+	<bean name="beanInstanceFactory"  class="com.yexj.learn.spring.second.HelloApiInstanceFactory"/>
+	<bean name="helloFactory2" factory-bean="beanInstanceFactory" factory-method="newInstance">
+		<constructor-arg index="0" value="Hello!beanInstanceFactory"></constructor-arg>
+	</bean>
+	
 </beans>
