@@ -10,6 +10,7 @@ http://www.springframework.org/schema/context		   http://www.springframework.org
 	<bean id="hello" class="com.yexj.learn.spring.start.impl.HelloImpl"/>
 	<!-- 引入其他资源 -->
 	<import resource="my.xml"/>
+	<import resource="chapter3.xml"/>
 	
 	<!-- 实例化Bean 无参数和有参数的两种 -->
 	<bean name="helloApi" class="com.yexj.learn.spring.second.impl.HelloApiImpl"/>
