@@ -22,5 +22,11 @@ http://www.springframework.org/schema/context		   http://www.springframework.org
 	    <constructor-arg name="message" value="Hello world!" />
 	    <constructor-arg name="index" value="3"/>
 	</bean>
+	
+	<!-- setter注入 -->
+	<bean id="bySetter" class="com.yexj.learn.spring.chapter3.impl.HelloImpl2">
+	    <property name="message" value="Hello World"/>
+	    <property name="index" value="1"/>
+	</bean>
 
 </beans>

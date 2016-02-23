@@ -2,6 +2,7 @@ package chapter3;
 
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.yexj.learn.spring.chapter3.HelloApi;
@@ -11,16 +12,22 @@ public class Chapter3Test {
 	@Test
 	public void test(){
 		BeanFactory beanFactory = new ClassPathXmlApplicationContext("application.xml");
-		// Ë÷ÒıµÄ·½Ê½
+		// ç´¢å¼•çš„æ–¹å¼
 		HelloApi hello = beanFactory.getBean("byIndex", HelloApi.class);
 		hello.sayHello();
-		// ÀàĞÍµÄ·½Ê½
+		// ç±»å‹çš„æ–¹å¼
 		HelloApi hello1 = beanFactory.getBean("byType", HelloApi.class);
 		hello1.sayHello();
-		// Ãû³ÆµÄ·½Ê½
+		// åç§°çš„æ–¹å¼
 		HelloApi hello2 = beanFactory.getBean("byName", HelloApi.class);
 		hello2.sayHello();
+	}
 	
+	@Test
+	public void testSetter(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+		HelloApi hello = (HelloApi)context.getBean("bySetter");
+		hello.sayHello();
 	}
 	
 }
